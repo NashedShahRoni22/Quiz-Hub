@@ -1,4 +1,5 @@
 import React from "react";
+import { Row } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
 const QuizQuestions = () => {
@@ -17,16 +18,15 @@ const QuizQuestions = () => {
         <h1>Quiz topic: {name}</h1>
         <h4>Given Question: {total}</h4>
       </div>
-      <div className="m-5">
-        <div>
-          {questions.map((questionData) => (
-            <Question
-              key={questionData.id}
-              questionData={questionData}
-            ></Question>
-          ))}
-        </div>
-      </div>
+
+      <Row xs={1} md={2} lg={3} className="g-4 m-5">
+        {questions.map((questionData) => (
+          <Question
+            key={questionData.id}
+            questionData={questionData}
+          ></Question>
+        ))}
+      </Row>
     </section>
   );
 };

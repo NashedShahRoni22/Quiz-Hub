@@ -1,0 +1,7 @@
+.question-card{
+    border: 2px solid rgb(124, 77, 255);
+    border-radius: 16px;
+}
+svg, h5{
+    color: rgb(124, 77, 255);
+}

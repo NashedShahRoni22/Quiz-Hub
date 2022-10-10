@@ -8,3 +8,6 @@
 .navLink a:hover{
     color: #7C4DFF;
 }
+.navLink a.active{
+    color: #7C4DFF;
+}

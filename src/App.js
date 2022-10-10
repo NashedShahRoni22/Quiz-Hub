@@ -1,34 +1,53 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
-import QuizHub from './components/QuizHub/QuizHub';
-import Statistics from './components/Statistics/Statistics';
-import Blog from './components/Blog/Blog';
-import Navigation from './layouts/Navigation';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import QuizHub from "./components/QuizHub/QuizHub";
+import Statistics from "./components/Statistics/Statistics";
+import Blog from "./components/Blog/Blog";
+import Navigation from "./layouts/Navigation";
+import Question from "./components/Question/Question";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Navigation></Navigation>,
-      children:[
+      children: [
         {
-          path:"/",
-          element:<QuizHub></QuizHub>,
+          path: "/",
+          loader: async () => {
+            return fetch('https://openapi.programming-hero.com/api/quiz');
+          },
+          element: <QuizHub></QuizHub>,
         },
         {
-          path:"/quizhub",
-          element:<QuizHub></QuizHub>,
+          path: "/quizhub",
+          loader: async () => {
+            return fetch('https://openapi.programming-hero.com/api/quiz');
+          },
+          element: <QuizHub></QuizHub>,
         },
         {
-          path:"/statistic",
-          element:<Statistics></Statistics>,
+          path: "/statistic",
+          element: <Statistics></Statistics>,
         },
         {
-          path:"/blog",
-          element:<Blog></Blog>,
+          path: "/blog",
+          element: <Blog></Blog>,
         },
-      ]
+        {
+          path: "/:id",
+          loader: async ({ params }) => {
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.id}`);
+          },
+          element: <Question></Question>,
+        },
+      ],
     },
+    {
+      path: '*',
+      element:<NotFound></NotFound>
+    }
   ]);
   return (
     <div className="App">

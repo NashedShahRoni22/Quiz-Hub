@@ -5,6 +5,8 @@ const QuizQuestions = () => {
   const data = useLoaderData();
   const questionData = data.data;
   const { logo, name, questions, total } = questionData;
+
+  
   return (
     <section>
       <div className="d-flex align-items-center justify-content-center">

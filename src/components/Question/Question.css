@@ -9,3 +9,6 @@
 svg, h5{
     color: rgb(124, 77, 255);
 }
+svg:hover{
+    cursor: pointer;
+}

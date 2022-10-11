@@ -7,18 +7,18 @@ import { ToastContainer, toast } from "react-toastify";
 const Question = ({ questionData }) => {
   const { question, options, correctAnswer } = questionData;
 
-  const notify = () => toast(correctAnswer);
+  const notify = () => toast.info(correctAnswer);
 
   const handelClick = (option) => {
     if (option === correctAnswer) {
-      alert("Correct Answer! ");
+      toast.success("Correct Answer!");
     } else {
-      alert("Wrong Answer");
+      toast.warn("Wrong Answer!");
     }
   };
   return (
     <section className="question-card p-3 m-3">
-      <div>
+      <div className="question-container">
         <div>
           <h5 className="my-3 text-center">{question}</h5>
         </div>

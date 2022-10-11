@@ -1,23 +1,23 @@
 import React from "react";
-import { Col, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import './Question.css'
 
 const Question = ({ questionData }) => {
-  const { question, options } = questionData;
+
+  const { question, options, correctAnswer } = questionData;
   return (
-    <Col className="question-card">
-      <Form>
-        <h5 className="my-3">{question}</h5>
+    <div className="question-card p-3 m-3">
+      <div
+      >
+        <h5 className="my-3 text-center">{question}</h5>
         <FontAwesomeIcon icon={faEye} className="my-3" size="xl"/>
         {options.map((option) => (
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label={option} />
-          </Form.Group>
+          <p className="p-3">{option}</p>
         ))}
-      </Form>
-    </Col>
+      </div>
+    </div>
   );
 };
 

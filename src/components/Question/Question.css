@@ -1,6 +1,10 @@
-.question-card{
+.question-card, p{
     border: 2px solid rgb(124, 77, 255);
-    border-radius: 16px;
+    border-radius: 8px;
+}
+p:hover{
+    background-color: rgba(124, 77, 255, 0.445);
+    cursor: pointer;
 }
 svg, h5{
     color: rgb(124, 77, 255);

@@ -1,9 +1,9 @@
-.question-card, p{
+.question-card, .question-card p{
     border: 2px solid rgb(124, 77, 255);
     border-radius: 8px;
 }
-p:hover{
-    background-color: rgba(124, 77, 255, 0.445);
+.question-card p:hover{
+    background-color: rgba(124, 77, 255, 0.285);
     cursor: pointer;
 }
 svg, h5{

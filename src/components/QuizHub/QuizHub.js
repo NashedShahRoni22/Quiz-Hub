@@ -1,7 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
-import Banner from "../Banner/Banner";
 import Quiz from "../Quiz/Quiz";
 
 const QuizHub = () => {
@@ -9,7 +8,6 @@ const QuizHub = () => {
   const quizs = response.data;
   return (
     <section>
-      <Banner></Banner>
       <hr />
       <h1 className="highlight text-center">Dive In To Quiz</h1>
       <hr />

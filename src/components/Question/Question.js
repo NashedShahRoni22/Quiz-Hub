@@ -4,18 +4,12 @@ import "./Question.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
-const Question = ({ questionData }) => {
+const Question = ({ questionData,handelClick }) => {
   const { question, options, correctAnswer } = questionData;
 
   const notify = () => toast.info(correctAnswer);
 
-  const handelClick = (option) => {
-    if (option === correctAnswer) {
-      toast.success("Correct Answer!");
-    } else {
-      toast.warn("Wrong Answer!");
-    }
-  };
+  
   return (
     <section className="question-card p-3 m-3">
       <div className="question-container">
@@ -42,7 +36,7 @@ const Question = ({ questionData }) => {
         />
 
         {options.map((option) => (
-          <p className="p-3 option" onClick={() => handelClick(option)}>
+          <p className="p-3 option" onClick={() => handelClick(option, correctAnswer)}>
             {option}
           </p>
         ))}

@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import sadEmoji from "../../images/sadEmoji.png";
+import './NotFound.css'
 
 const NotFound = () => {
-    return (
-        <div>
-            <h1>NotFound</h1>
-        </div>
-    );
+  return (
+    <div className="container my-5 p-5 text-center notFound text-light rounded">
+      <img src={sadEmoji} alt="" height="150" />
+      <h1 className="fw-bold mt-5">404 Not Found!</h1>
+      <p>
+        404 — means not found. Basically, you’re looking for a page but the web
+        application you’re talking to has no idea what you’re talking about.{" "}
+      </p>
+    </div>
+  );
 };
 
 export default NotFound;

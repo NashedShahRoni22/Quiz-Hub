@@ -11,9 +11,9 @@ const Quiz = ({ quiz }) => {
         <Card>
           <Card.Img variant="top" src={logo} className="bg-dark" height="250" />
           <Card.Body>
-            <Card.Title>{name}</Card.Title>
+            <Card.Title><h4 className="highlight">{name}</h4></Card.Title>
             <Card.Text>
-              Total Question: {total}
+              <strong className="highlight">Total Question: {total}</strong>
               <br />
             </Card.Text>
             <Link to={`/question/${id}`} className="btn btn-primary">

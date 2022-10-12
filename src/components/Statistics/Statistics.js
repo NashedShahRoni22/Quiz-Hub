@@ -8,7 +8,7 @@ const Statistics = () => {
   return (
     <section className="container">
       <div className="my-3">
-        <h3 className="highlight ms-5">SimpleLineChart of Total</h3>
+        <h3 className="highlight">SimpleLineChart of Total</h3>
         <div className="my-5">
           <LineChart
             width={500}
@@ -32,7 +32,7 @@ const Statistics = () => {
       </div>
 
       <div className="my-3">
-        <h3 className="highlight ms-5">SimpleBarChart of Total</h3>
+        <h3 className="highlight">SimpleBarChart of Total</h3>
         <div className="my-5">
         <BarChart
           width={500}
